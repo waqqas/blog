@@ -19,7 +19,7 @@ I followed the following steps to get my build working again:
 1. Installed `patch-package` as dev dependencies by following the [setup instructions](https://github.com/ds300/patch-package#set-up)
 2. I added the required include path in `RCTSilentSwitch.xcodeproj` and generated a patch file using the following command:
 
-```yarn patch-package  react-native-silent-switch```
+`yarn patch-package react-native-silent-switch`
 
 A patch file was generated in ``. It's content is as follows
 
@@ -32,9 +32,9 @@ index 61c955f..0adef09 100644
 -#import "RCTBridgeModule.h"
 +#import "React/RCTBridgeModule.h"
  #import "SharkfoodMuteSwitchDetector.h"
- 
+
  @interface RCTSilentSwitch : NSObject <RCTBridgeModule>
- ```
+```
 
 3. I removed the `node_modules` directory and ran `yarn install` and confirmed that the patch was applied. It printed the following messages at the end.
 
@@ -45,8 +45,6 @@ Applying patches...
 react-native-silent-switch@0.1.0 ✔
 ```
 
-Conclusion
----
+## Conclusion
 
 Using `patch-package`, I was able to make small changes in the `node_modules` directory in a way that is CI friendly.
-
