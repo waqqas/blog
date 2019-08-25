@@ -1,5 +1,5 @@
 ---
-published: true
+published: false
 title: "React-Native: CI friendly way to make changes to third-party packages"
 cover_image: "https://raw.githubusercontent.com/waqqas/blog/master/blog-posts/react-native-applying-patches/assets/andrew-ridley-jR4Zf-riEjI-unsplash.jpg"
 description: "Patch packages in node_modules that works great with CI tools"
