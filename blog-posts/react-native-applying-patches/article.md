@@ -8,7 +8,11 @@ series: react-native
 canonical_url:
 ---
 
-I was working on a react-native project and wanted to detect changes when the silent switch is flipped on or off. As usual, I searched and found a nifty package [`(react-native-silent-switch)`](https://github.com/gnestor/react-native-silent-switch) that did the job. I added that in my project as mentioned in its documentation and hit a snag. It gave an error during compilation due to wrong path in header file `RCTSilentSwitch.h`. I could have modified the file but it has two problems. One, any other developer has to manually do those changes on hiss side, and, secondly, my CI build would fail. The build would fail because the file was part of a node packages this is installed via `package.json`.
+Have you been in a situation where you installed a package and it doesn't work with the latest version of react-native because the path of RN header file has changed? I ran into a similar problem and here's how I fixed it.
+
+I was working on a react-native project and wanted to detect changes when the silent switch is flipped on or off. As usual, I searched and found a nifty package [`(react-native-silent-switch)`](https://github.com/gnestor/react-native-silent-switch) that did the job. I added that in my project as mentioned in its documentation and hit a snag. It gave an error during compilation due to wrong path in header file `RCTSilentSwitch.h`. Normally I would switch to some similar package which doesn't have this problem, but in this case I couldn't find a better alternative. (Maybe I should write one)
+
+I could have modified the file but it has two problems. One, any other developer has to manually do those changes on hiss side, and, secondly, my CI build would fail. The build would fail because the file was part of a node packages this is installed via `package.json`.
 
 I needed a way to modify `RCTSilentSwitch.h` AFTER it has been installed by `npm` and BEFORE it start compiling. My initial reaction was to use the `post-install` stage to patch the file, but I thought, there might be something out there for it too. So, I searched again and found another cool package that did just that. It was aptly named [`patch-package`](https://github.com/ds300/patch-package).
 
