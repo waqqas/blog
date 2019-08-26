@@ -1,11 +1,11 @@
 ---
 published: true
-title: "React-Native: CI friendly way to make changes to third-party packages"
-cover_image: "https://raw.githubusercontent.com/waqqas/blog/master/blog-posts/react-native-applying-patches/assets/cover.jpg"
-description: "Patch packages in node_modules that works great with CI tools"
+title: 'React-Native: CI friendly way to make changes to third-party packages'
+cover_image: 'https://raw.githubusercontent.com/waqqas/blog/master/blog-posts/react-native-applying-patches/assets/cover.jpg'
+description: 'Patch packages in node_modules that works great with CI tools'
 tags: react-native, react, react.js, ci, node_modules, third-party, patch
 series: react-native
-canonical_url:
+canonical_url: 'https://dev.to/waqqas/react-native-applying-patches'
 ---
 
 Have you been in a situation where you installed a package and it doesn't work with the latest version of react-native because the path of RN header file has changed? I ran into a similar problem and here's how I fixed it.
